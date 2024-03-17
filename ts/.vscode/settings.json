@@ -3,5 +3,14 @@
     {
       "mode": "auto"
     }
-  ]
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always",
+    "source.fixAll.eslint": "always",
+    "source.organizeImports": "always"
+  },
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "cSpell.words": ["ecommerce", "headlessui", "heroicons", "tailwindcss"]
 }
