@@ -27,3 +27,7 @@ jobs:
       - name: Test
         run: go test -v ./...
         working-directory: ./go
+
+      - name: docker build
+        run: docker build -t go-helloworldserver .
+        working-directory: ./go
