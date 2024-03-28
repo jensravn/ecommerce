@@ -1,0 +1,28 @@
+name: PR - Go
+
+on:
+  pull_request:
+    branches:
+      - "main"
+    paths:
+      - "go/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version-file: "go/go.mod"
+
+      - name: Build
+        run: go build -v ./...
+        working-directory: ./go
+
+      - name: Test
+        run: go test -v ./...
+        working-directory: ./go
