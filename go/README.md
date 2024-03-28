@@ -1,7 +1,7 @@
 # Go
 
 ```sh
-# build container
+# build container image
 podman build -t grpc-ping .
 
 # run container
