@@ -1,4 +1,4 @@
-# Turborepo starter
+# TypeScript
 
 This is an official starter Turborepo.
 
