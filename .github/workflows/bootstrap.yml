@@ -1,15 +1,12 @@
 name: Bootstrap
 
 on:
-  pull_request:
-    branches:
-      - "main"
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    environment: test # Checkout new branch and specify environment - trigger from new branch with workflow_dispatch
     steps:
       - uses: actions/checkout@v3
 
