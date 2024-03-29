@@ -1,0 +1,25 @@
+name: Bootstrap
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: "go/go.mod"
+          cache-dependency-path: "go/go.sum"
+
+      - name: Build bootstrap package
+        run: go build -v .
+        working-directory: ./go/tools/bootstrap
+
+      - name: Run bootstrap script
+        run: go run -p=${{ env.PROJECT_ID }} .
+        working-directory: ./go/tools/bootstrap
